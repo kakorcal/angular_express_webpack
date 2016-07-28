@@ -1,4 +1,5 @@
 # Angular Express Webpack Example
+Simple angular app integrating [webpack-dev-middleware]('https://github.com/webpack/webpack-dev-middleware') with an express server
 ---------
 # Resources
 http://forum.vuejs.org/topic/836/webpack-hot-reloading-possible-with-express-server/5
