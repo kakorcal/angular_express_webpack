@@ -1,8 +1,11 @@
 (()=>{
-  angular.module('aew.routes', ['ui.router']).config(routes);
+  const angular = require('angular');
+  const uiRouter = require('angular-ui-router');
 
-  routes.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
-  function routes($stateProvider, $urlRouterProvider, $locationProvider){
+  const aewRoutes = angular.module('aew.routes', [uiRouter]).config(routeConfig);
+
+  routeConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+  function routeConfig($stateProvider, $urlRouterProvider, $locationProvider){
     $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise("/");
 
@@ -12,4 +15,6 @@
         templateUrl: 'views/home.html',
       });
   }
+  
+  module.exports = aewRoutes.name;
 })();
