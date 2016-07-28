@@ -1,7 +1,10 @@
 module.exports = {
-  entry: 'index.js',
+  devtool: 'eval-source-map',
+  debug: true,
+  entry: './client/javascripts/app.js',
   output: {
-    path: `${__dirname}/client/javascripts/`,
+    path: '/',
+    publicPath: 'http://localhost:4000/javascripts/',
     filename: 'bundle.js'
   }
 };
