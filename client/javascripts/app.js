@@ -1,5 +1,3 @@
-(()=>{
-  const angular = require('angular');
-  const aewRoutes = require('./routes');
-  angular.module('aew-app', [aewRoutes]);
-})();
+import angular from 'angular';
+import aewRoutes from './routes';
+angular.module('aew-app', [aewRoutes]);
