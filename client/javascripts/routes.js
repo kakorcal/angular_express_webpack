@@ -4,13 +4,12 @@
   routes.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
   function routes($stateProvider, $urlRouterProvider, $locationProvider){
     $locationProvider.html5Mode(true);
-
     $urlRouterProvider.otherwise("/");
 
     $stateProvider
-      .state('main', {
+      .state('home', {
         url: '/',
-        templateUrl: 'views/pages/home.html',
+        templateUrl: 'views/home.html',
       });
   }
 })();
