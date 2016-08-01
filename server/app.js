@@ -1,7 +1,7 @@
 const express = require('express');
 const webpack = require('webpack');
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 2000;
 
 app.use('/javascripts', express.static(`${__dirname}/../client/javascripts`));
 app.use('/stylesheets', express.static(`${__dirname}/../client/stylesheets`));
@@ -12,11 +12,8 @@ app.use(require('morgan')('tiny'));
 if(process.env.NODE_ENV !== 'production'){
   const devConfig = require('../webpack.config');
   const compiler = webpack(devConfig);
-  app.use(require('webpack-dev-middleware')(compiler, {
-    publicPath: devConfig.output.publicPath,
-    stats: {colors: true}
-  }));
-  console.log(devConfig);
+  app.use(require('webpack-dev-middleware')(compiler));
+  console.log(devConfig.output);
 }
 
 app.get('*', (req, res)=>{

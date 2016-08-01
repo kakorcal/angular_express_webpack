@@ -12,7 +12,12 @@ function routeConfig($stateProvider, $urlRouterProvider, $locationProvider){
     .state('home', {
       url: '/',
       templateUrl: 'views/home.html',
-    });
+    })
+    .state('page', {
+      url: '/page',
+      templateUrl: 'views/page.html'
+    })
+    ;
 }
 
 export default aewRoutes.name;
